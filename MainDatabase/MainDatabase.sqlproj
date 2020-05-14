@@ -95,5 +95,5 @@
     <None Include="PublishProfiles\MainDatabase.dev.publish.xml" />
     <None Include="PublishProfiles\MainDatabase.prod.publish.xml" />
   </ItemGroup>
-  <Import Project="build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
+  <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>

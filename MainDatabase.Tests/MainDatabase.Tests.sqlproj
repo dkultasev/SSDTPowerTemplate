@@ -57,10 +57,10 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tests" />
-    <Folder Include="Test Classes" />
     <Folder Include="PublishProfiles" />
     <Folder Include="Scripts" />
+    <Folder Include="Test Classes" />
+    <Folder Include="Tests" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="..\dacpac\tsqlt_objects.dacpac">
@@ -85,4 +85,5 @@
   <ItemGroup>
     <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
   </ItemGroup>
+  <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>
