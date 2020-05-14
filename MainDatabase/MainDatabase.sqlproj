@@ -57,6 +57,21 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="PublishProfiles" />
+    <Folder Include="Schemas" />
+    <Folder Include="Schemas\dbo" />
+    <Folder Include="Schemas\dbo\Functions" />
+    <Folder Include="Schemas\dbo\Procedures" />
+    <Folder Include="Schemas\dbo\Synonyms" />
+    <Folder Include="Schemas\dbo\Tables" />
+    <Folder Include="Schemas\dbo\Views" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\one_time_scripts" />
+    <Folder Include="Security\" />
+    <Folder Include="Security\Logins" />
+    <Folder Include="Security\Roles" />
+    <Folder Include="Security\Schemas" />
+    <Folder Include="Security\Users" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac">
@@ -69,6 +84,12 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
     </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
   </ItemGroup>
   <Import Project="build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>
