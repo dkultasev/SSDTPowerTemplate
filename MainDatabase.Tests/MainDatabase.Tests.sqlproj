@@ -57,6 +57,10 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tests" />
+    <Folder Include="Test Classes" />
+    <Folder Include="PublishProfiles" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="..\dacpac\tsqlt_objects.dacpac">
@@ -71,5 +75,14 @@
       <Private>True</Private>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PublishProfiles\MainDatabase.local_only.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
   </ItemGroup>
 </Project>
