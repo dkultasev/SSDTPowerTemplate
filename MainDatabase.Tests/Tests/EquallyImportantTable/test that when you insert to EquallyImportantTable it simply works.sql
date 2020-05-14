@@ -1,11 +1,12 @@
-﻿CREATE PROCEDURE ImportantTable.[test that when you insert to EquallyImportantTable it simply works]
+﻿CREATE PROCEDURE EquallyImportantTable.[test that when you insert to EquallyImportantTable it simply works]
 AS
     BEGIN
-        IF NOT EXISTS (   SELECT 1
-                            FROM sys.tables AS t
-                           WHERE OBJECT_ID('dbo.EquallyImportantTable') = t.object_id)
-            BEGIN
-                RAISERROR('Table doesn''t exist', 16, 1);
-            END
+        DECLARE @expected INT = 0
+              , @actual   INT = -1;
+
+        EXEC ImportantTable.setup;
+        select @actual = Id from dbo.EquallyImportantTable;
+
+        EXEC tSQLt.AssertEquals @Expected = @expected, @Actual = @actual;
     END
 GO
