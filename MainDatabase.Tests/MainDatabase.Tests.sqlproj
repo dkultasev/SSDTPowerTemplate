@@ -64,4 +64,12 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
     </ArtifactReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MainDatabase\MainDatabase.sqlproj">
+      <Name>MainDatabase</Name>
+      <Project>{677a90be-5465-44da-a82d-eef3d3d8209d}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
