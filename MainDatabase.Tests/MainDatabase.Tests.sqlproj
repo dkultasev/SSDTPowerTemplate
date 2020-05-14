@@ -63,6 +63,16 @@
     <Folder Include="Tests" />
   </ItemGroup>
   <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\msdb.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\msdb.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
+    </ArtifactReference>
     <ArtifactReference Include="..\dacpac\tsqlt_objects.dacpac">
       <HintPath>..\dacpac\tsqlt_objects.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
@@ -84,6 +94,10 @@
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Test Classes\ImportantTable.sql" />
+    <Build Include="Tests\test that ImportantTable exists.sql" />
   </ItemGroup>
   <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>
