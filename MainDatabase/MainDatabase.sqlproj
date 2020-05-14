@@ -92,8 +92,11 @@
     <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PublishProfiles\MainDatabase.dev.publish.xml" />
     <None Include="PublishProfiles\MainDatabase.prod.publish.xml" />
+    <None Include="PublishProfiles\MainDatabase.test.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schemas\dbo\Tables\ImportantTable.sql" />
   </ItemGroup>
   <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>
