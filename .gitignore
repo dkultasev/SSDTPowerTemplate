@@ -1,0 +1,30 @@
+﻿# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+logs/
+
+# Visual Studio cache/options directory
+.vs/
+
+project.lock.json
+~$*
+*~
+*.dbmdl
+*.jfm
+
+#ignoring this publish config as every developer will have his own settings
+*.local_only.publish.xml
