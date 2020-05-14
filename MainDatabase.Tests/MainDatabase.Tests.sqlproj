@@ -61,6 +61,8 @@
     <Folder Include="Scripts" />
     <Folder Include="Test Classes" />
     <Folder Include="Tests" />
+    <Folder Include="Tests\EquallyImportantTable" />
+    <Folder Include="Tests\ImportantTable" />
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\150\SqlSchemas\master.dacpac">
@@ -79,6 +81,13 @@
     </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnotherDbSameInstance\AnotherDbSameInstance.sqlproj">
+      <Name>AnotherDbSameInstance</Name>
+      <Project>{e3fbaf8c-95d7-4f90-80e0-5a449bcde42b}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>AnotherDbSameInstance</DatabaseSqlCmdVariable>
+    </ProjectReference>
     <ProjectReference Include="..\MainDatabase\MainDatabase.sqlproj">
       <Name>MainDatabase</Name>
       <Project>{677a90be-5465-44da-a82d-eef3d3d8209d}</Project>
@@ -96,8 +105,17 @@
     <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Test Classes\EquallyImportantTable.sql" />
     <Build Include="Test Classes\ImportantTable.sql" />
-    <Build Include="Tests\test that ImportantTable exists.sql" />
+    <Build Include="Tests\EquallyImportantTable\setup.sql" />
+    <Build Include="Tests\EquallyImportantTable\test that when you insert to EquallyImportantTable it simply works.sql" />
+    <Build Include="Tests\ImportantTable\test that ImportantTable exists.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="AnotherDbSameInstance">
+      <DefaultValue>AnotherDbSameInstance</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
   <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>

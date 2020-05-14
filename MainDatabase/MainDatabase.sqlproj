@@ -98,7 +98,23 @@
     <None Include="PublishProfiles\MainDatabase.test.publish.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Schemas\dbo\Synonyms\EquallyImportantTable.sql" />
     <Build Include="Schemas\dbo\Tables\ImportantTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnotherDbSameInstance\AnotherDbSameInstance.sqlproj">
+      <Name>AnotherDbSameInstance</Name>
+      <Project>{e3fbaf8c-95d7-4f90-80e0-5a449bcde42b}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>AnotherDbSameInstance</DatabaseSqlCmdVariable>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="AnotherDbSameInstance">
+      <DefaultValue>AnotherDbSameInstance</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
   <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
 </Project>

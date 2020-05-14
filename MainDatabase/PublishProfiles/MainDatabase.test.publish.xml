@@ -7,4 +7,9 @@
     <TargetConnectionString>Data Source=localhost;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
   </PropertyGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="AnotherDbSameInstance">
+      <Value>AnotherDbSameInstance</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
 </Project>

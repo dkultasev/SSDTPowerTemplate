@@ -1,0 +1,1 @@
+﻿CREATE SYNONYM dbo.EquallyImportantTable FOR [$(AnotherDbSameInstance)].dbo.EquallyImportantTable;
