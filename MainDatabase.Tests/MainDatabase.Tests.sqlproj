@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>MainDatabase</Name>
+    <Name>MainDatabase.Tests</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{677a90be-5465-44da-a82d-eef3d3d8209d}</ProjectGuid>
+    <ProjectGuid>{521fd09e-ad17-4644-83c1-ebac74112554}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SSDTPowerTemplate</RootNamespace>
-    <AssemblyName>SSDTPowerTemplate</AssemblyName>
+    <RootNamespace>MainDatabase.Tests</RootNamespace>
+    <AssemblyName>MainDatabase.Tests</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -58,5 +58,10 @@
   <ItemGroup>
     <Folder Include="Properties" />
   </ItemGroup>
-  <Import Project="build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />
+  <ItemGroup>
+    <ArtifactReference Include="..\dacpac\tsqlt_objects.dacpac">
+      <HintPath>..\dacpac\tsqlt_objects.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+  </ItemGroup>
 </Project>
