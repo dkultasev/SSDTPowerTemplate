@@ -12,24 +12,29 @@ There are 4 projects in the solution:
 
 There are synonyms created in `MainDatabase` for all the objects needed to be referenced from `AnotherDbSameInstance` and `AnotherDbAnotherInstance`. Synonyms seems to be the best working solution to work with external objects so I strongly advice to do so.
 
-## tSQLt improvements
+## tSQLt
+### Improvements
 The dacpac included in the project consists an unofficial version of the `tSQLt`. It has all the objects as the original frameworks as 2 new features developed by me that has Pull Requests open in the main project but still not merged to the main branch. These 2 new features are:
 * Faking synonyms with `tSQLt.FakeTable` procedure. Native functionality with only synonyms that are referencing object on the same database. New functionality can work with external objects as well.
 * Simplify mocking functions with `tSQLt.FakeFunction`. In original version for mocking the function, you were needed to create new function and then pass it to the framework that would replace the original one. New functionality allows you to pass the table with the data or code snippet that will return needed output.
 
-## tSQLt samples
+### tSQLt samples
 Few unit tests samples are added as well. Additionally all unit tests will be running after each `Tests` project publish
 
-## sqlproj file ordering to avoid merge conflicts
+## SSDT Project changes
+### sqlproj file ordering to avoid merge conflicts
 When working with SSDT in a team, there are lots of the troubles when merging `sqlproj` file as it is adding entries to the xml chaotically. To avoid this there is `build_VS2017.targets` file referenced in each solution. That build target script will order the elements in the `sqlproj` file with every project build. **Note**: as the project file is re-ordered by external script, Visual Studio treats it as the project file changed and will ask you to reload the project after the build. **Tip**: as there is no actual change in the project, you can simply click on "Ignore all" button that would not reload the project.
 
-## .gitignore
+### .gitignore
 Temporary/binary and other non-source are excluded from source control. 
 
-## Developer specific publish profiles
+### Developer specific publish profiles
 All publish profiles that ends with `.local_only.publish.xml` will be ignored. One can keep it's own version of the publish profile with it's own variables and/or other settings.
 
-## Code analysis
+### System databases 
+`msdb` and `master` are included in the main project
+
+### Code analysis
 Code analysis is enabled for all projects
 
 ## One time pre/post scripts
