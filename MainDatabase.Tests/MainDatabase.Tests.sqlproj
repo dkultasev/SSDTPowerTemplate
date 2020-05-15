@@ -61,6 +61,7 @@
     <Folder Include="Scripts" />
     <Folder Include="Test Classes" />
     <Folder Include="Tests" />
+    <Folder Include="Tests\BoombastikProcedure" />
     <Folder Include="Tests\EquallyImportantTable" />
     <Folder Include="Tests\ImportantTable" />
   </ItemGroup>
@@ -81,6 +82,14 @@
     </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnotherDbAnotherInstance\AnotherDbAnotherInstance.sqlproj">
+      <Name>AnotherDbAnotherInstance</Name>
+      <Project>{7f10856b-572a-4499-8d94-2203b986b85b}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>AnotherDbAnotherInstance</DatabaseSqlCmdVariable>
+      <ServerSqlCmdVariable>AnotherDbAnotherInstanceServer</ServerSqlCmdVariable>
+    </ProjectReference>
     <ProjectReference Include="..\AnotherDbSameInstance\AnotherDbSameInstance.sqlproj">
       <Name>AnotherDbSameInstance</Name>
       <Project>{e3fbaf8c-95d7-4f90-80e0-5a449bcde42b}</Project>
@@ -105,13 +114,23 @@
     <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Test Classes\BoombastikProcedure.sql" />
     <Build Include="Test Classes\EquallyImportantTable.sql" />
     <Build Include="Test Classes\ImportantTable.sql" />
+    <Build Include="Tests\BoombastikProcedure\test that it doesn't matter what you pass to function you are still cool.sql" />
     <Build Include="Tests\EquallyImportantTable\setup.sql" />
     <Build Include="Tests\EquallyImportantTable\test that when you insert to EquallyImportantTable it simply works.sql" />
     <Build Include="Tests\ImportantTable\test that ImportantTable exists.sql" />
   </ItemGroup>
   <ItemGroup>
+    <SqlCmdVariable Include="AnotherDbAnotherInstance">
+      <DefaultValue>AnotherDbAnotherInstance</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="AnotherDbAnotherInstanceServer">
+      <DefaultValue>AnotherDbAnotherInstanceServer</DefaultValue>
+      <Value>$(SqlCmdVar__3)</Value>
+    </SqlCmdVariable>
     <SqlCmdVariable Include="AnotherDbSameInstance">
       <DefaultValue>AnotherDbSameInstance</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>

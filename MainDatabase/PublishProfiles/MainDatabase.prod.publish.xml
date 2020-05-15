@@ -10,8 +10,17 @@
     <DropObjectsNotInSource>True</DropObjectsNotInSource>
   </PropertyGroup>
   <ItemGroup>
+    <SqlCmdVariable Include="AnotherDbAnotherInstance">
+      <Value>AnotherDbAnotherInstance</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="AnotherDbAnotherInstanceServer">
+      <Value>AnotherDbAnotherInstanceServer</Value>
+    </SqlCmdVariable>
     <SqlCmdVariable Include="AnotherDbSameInstance">
       <Value>AnotherDbSameInstance</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="OtherInstance">
+      <Value>localhost</Value>
     </SqlCmdVariable>
   </ItemGroup>
 </Project>

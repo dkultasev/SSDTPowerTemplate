@@ -98,10 +98,20 @@
     <None Include="PublishProfiles\MainDatabase.test.publish.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Schemas\dbo\Functions\ImportantFunction.sql" />
+    <Build Include="Schemas\dbo\Synonyms\BoombastikProcedure.sql" />
     <Build Include="Schemas\dbo\Synonyms\EquallyImportantTable.sql" />
     <Build Include="Schemas\dbo\Tables\ImportantTable.sql" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnotherDbAnotherInstance\AnotherDbAnotherInstance.sqlproj">
+      <Name>AnotherDbAnotherInstance</Name>
+      <Project>{7f10856b-572a-4499-8d94-2203b986b85b}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>AnotherDbAnotherInstance</DatabaseSqlCmdVariable>
+      <ServerSqlCmdVariable>AnotherDbAnotherInstanceServer</ServerSqlCmdVariable>
+    </ProjectReference>
     <ProjectReference Include="..\AnotherDbSameInstance\AnotherDbSameInstance.sqlproj">
       <Name>AnotherDbSameInstance</Name>
       <Project>{e3fbaf8c-95d7-4f90-80e0-5a449bcde42b}</Project>
@@ -111,9 +121,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <SqlCmdVariable Include="AnotherDbAnotherInstance">
+      <DefaultValue>AnotherDbAnotherInstance</DefaultValue>
+      <Value>$(SqlCmdVar__4)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="AnotherDbAnotherInstanceServer">
+      <DefaultValue>AnotherDbAnotherInstanceServer</DefaultValue>
+      <Value>$(SqlCmdVar__5)</Value>
+    </SqlCmdVariable>
     <SqlCmdVariable Include="AnotherDbSameInstance">
       <DefaultValue>AnotherDbSameInstance</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="OtherInstance">
+      <DefaultValue>OtherInstance</DefaultValue>
+      <Value>$(SqlCmdVar__3)</Value>
     </SqlCmdVariable>
   </ItemGroup>
   <Import Project="..\build_VS2017.targets" Condition="'$(Configuration)'=='Debug'" />

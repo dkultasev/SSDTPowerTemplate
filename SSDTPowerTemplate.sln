@@ -14,6 +14,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MainDatabase", "MainDatabas
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AnotherDbSameInstance", "AnotherDbSameInstance\AnotherDbSameInstance.sqlproj", "{E3FBAF8C-95D7-4F90-80E0-5A449BCDE42B}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AnotherDbAnotherInstance", "AnotherDbAnotherInstance\AnotherDbAnotherInstance.sqlproj", "{7F10856B-572A-4499-8D94-2203B986B85B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,12 @@ Global
 		{E3FBAF8C-95D7-4F90-80E0-5A449BCDE42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3FBAF8C-95D7-4F90-80E0-5A449BCDE42B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3FBAF8C-95D7-4F90-80E0-5A449BCDE42B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7F10856B-572A-4499-8D94-2203B986B85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F10856B-572A-4499-8D94-2203B986B85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F10856B-572A-4499-8D94-2203B986B85B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7F10856B-572A-4499-8D94-2203B986B85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F10856B-572A-4499-8D94-2203B986B85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F10856B-572A-4499-8D94-2203B986B85B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

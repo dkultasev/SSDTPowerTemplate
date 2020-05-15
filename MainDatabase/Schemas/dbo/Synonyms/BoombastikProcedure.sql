@@ -1,0 +1,1 @@
+﻿CREATE SYNONYM dbo.BoombastikProcedure FOR [$(AnotherDbAnotherInstanceServer)].[$(AnotherDbAnotherInstance)].dbo.BoombastikProcedure;
