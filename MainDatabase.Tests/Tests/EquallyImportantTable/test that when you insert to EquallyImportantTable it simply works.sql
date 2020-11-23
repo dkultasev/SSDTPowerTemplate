@@ -4,9 +4,10 @@ AS
         DECLARE @expected INT = 0
               , @actual   INT = -1;
 
-        EXEC ImportantTable.setup;
-        select @actual = Id from dbo.EquallyImportantTable;
+        EXEC tSQLt.FakeTable @TableName = 'dbo.EquallyImportantTable';
+        INSERT INTO dbo.EquallyImportantTable(Id) VALUES (0);
 
+        select @actual = Id from dbo.EquallyImportantTable;
         EXEC tSQLt.AssertEquals @Expected = @expected, @Actual = @actual;
     END
 GO

@@ -118,7 +118,6 @@
     <Build Include="Test Classes\EquallyImportantTable.sql" />
     <Build Include="Test Classes\ImportantTable.sql" />
     <Build Include="Tests\BoombastikProcedure\test that it doesn't matter what you pass to function you are still cool.sql" />
-    <Build Include="Tests\EquallyImportantTable\setup.sql" />
     <Build Include="Tests\EquallyImportantTable\test that when you insert to EquallyImportantTable it simply works.sql" />
     <Build Include="Tests\ImportantTable\test that ImportantTable exists.sql" />
   </ItemGroup>
