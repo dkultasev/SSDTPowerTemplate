@@ -21,10 +21,10 @@ RUN C:\TEMP\vs_buildtools.exe --quiet --wait --norestart --nocache `
     || IF "%ERRORLEVEL%"=="3010" EXIT 0
 
 
-ARG SQLPROJ_PATH
-ARG PUBLISH_PROFILE_PATH
-ARG MSBUILD_ACTION
-ARG MSBUILD_OPTIONAL_PARAMS
+ENV SQLPROJ_PATH=C:\\MSBuildTestDB\\MSBuildTestDB.sqlproj
+ENV PUBLISH_PROFILE_PATH=C:\\MSBuildTestDB\\MSBuildTestDB.publish.xml
+ENV MSBUILD_ACTION=Build,Publish
+ENV MSBUILD_OPTIONAL_PARAMS=" "
 
 RUN mkdir "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0\SSDT"
 RUN copy C:\BuildTools\MSBuild\Microsoft\VisualStudio\v16.0\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets "C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v11.0\SSDT"
