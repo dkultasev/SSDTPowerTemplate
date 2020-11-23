@@ -17,6 +17,9 @@ bld/
 [Oo]bj/
 logs/
 
+# Temp folder
+tmp/
+
 # Visual Studio cache/options directory
 .vs/
 
