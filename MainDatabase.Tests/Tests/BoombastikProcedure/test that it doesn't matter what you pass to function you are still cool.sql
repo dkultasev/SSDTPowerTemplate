@@ -1,19 +1,23 @@
 ﻿CREATE PROCEDURE BoombastikProcedure.[test that it doesn't matter what you pass to function you are still cool]
 AS
-    BEGIN
-    declare @expected int = 1,
-@actual int = -1
-       CREATE TABLE #expected
-       (
-           ImportantResult int not null
-       );
-       
-       insert into #expected  (ImportantResult) values (@expected);
+BEGIN
+    DECLARE @expected INT = 1
+           ,@actual INT = -1
+    CREATE TABLE #expected (
+        ImportantResult INT NOT NULL
+    );
 
-       exec tsqlt.fakefunction @FunctionName = 'dbo.ImportantFunction', @FakeDataSource = 'select 1 as ImportantResult';
+    INSERT INTO #expected (ImportantResult)
+        VALUES (@expected);
 
-        select @actual = ImportantResult FROM  dbo.ImportantFunction(100,100);
+    EXEC tSQLt.FakeFunction @FunctionName = 'dbo.ImportantFunction'
+                           ,@FakeDataSource = 'select 1 as ImportantResult';
 
-        exec tsqlt.assertequals @Actual = @actual, @Expected = @expected;
-    END
+    SELECT
+        @actual = ImportantResult
+    FROM dbo.ImportantFunction(100, 100);
+
+    EXEC tSQLt.AssertEquals @Actual = @actual
+                           ,@Expected = @expected;
+END
 GO
